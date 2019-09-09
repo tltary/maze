@@ -194,7 +194,7 @@ function generateRandomMaze() {
 	if (randomX >= 5) {
 		finishX = 5;
 	} else if (finishX === 0) {
-		finishX = 1;
+		finishX = 0;
 	} else {
 		finishX = randomX;
 	}
