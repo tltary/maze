@@ -419,6 +419,15 @@ template {
 body {
   background-color: #000; }
 
+.github {
+  display: inline-block;
+  width: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px; }
+  .github img {
+    width: 100%; }
+
 .game__container {
   background-color: #fff;
   width: 1000px;
