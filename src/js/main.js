@@ -31,11 +31,11 @@ ballLeft = () => {
 	let y = gameBall[1];
 	let clickPosition = y - 1;
 	if (gameBall[1] === 0) {
-		alert('левее некуда')
+		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[x][clickPosition][0] === 1) {
-		alert('Там блок, подумай еще')
+		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[x][clickPosition][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -43,7 +43,7 @@ ballLeft = () => {
 		gameBall[1] = clickPosition;
 		ball.style.left = `${clickPosition * 100}px`;
 		init();
-		alert('Поздравляю ты выйграл')
+		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
 		gameArray[x][clickPosition][1] = 'ball';
@@ -58,11 +58,11 @@ ballRight = () => {
 	let y = gameBall[1];
 	let clickPosition = y + 1;
 	if (gameBall[1] === 9) {
-		alert('правее некуда')
+		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[x][clickPosition][0] === 1) {
-		alert('Там блок, подумай еще')
+		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[x][clickPosition][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -70,7 +70,7 @@ ballRight = () => {
 		gameBall[1] = clickPosition;
 		ball.style.left = `${clickPosition * 100}px`;
 		init();
-		alert('Поздравляю ты выйграл')
+		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
 		gameArray[x][clickPosition][1] = 'ball';
@@ -85,11 +85,11 @@ ballUp = () => {
 	let y = gameBall[1];
 	let clickPosition = x - 1;
 	if (gameBall[0] === 0) {
-		alert('выше некуда')
+		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[clickPosition][y][0] === 1) {
-		alert('Там блок, подумай еще')
+		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[clickPosition][y][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -97,7 +97,7 @@ ballUp = () => {
 		gameBall[1] = clickPosition;
 		ball.style.top = `${clickPosition * 100}px`;
 		init();
-		alert('Поздравляю ты выйграл')
+		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
 		gameArray[clickPosition][y][1] = 'ball';
@@ -112,11 +112,11 @@ ballDown = () => {
 	let y = gameBall[1];
 	let clickPosition = x + 1;
 	if (gameBall[0] === 9) {
-		alert('ниже некуда')
+		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[clickPosition][y][0] === 1) {
-		alert('Там блок, подумай еще')
+		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[clickPosition][y][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -124,7 +124,7 @@ ballDown = () => {
 		gameBall[1] = clickPosition;
 		ball.style.top = `${clickPosition * 100}px`;
 		init();
-		alert('Поздравляю ты выйграл')
+		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
 		gameArray[clickPosition][y][1] = 'ball';
