@@ -42,11 +42,9 @@ ballLeft = () => {
 	let y = gameBall[1];
 	let clickPosition = y - 1;
 	if (gameBall[1] === 0) {
-		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[x][clickPosition][0] === 1) {
-		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[x][clickPosition][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -69,11 +67,9 @@ ballRight = () => {
 	let y = gameBall[1];
 	let clickPosition = y + 1;
 	if (gameBall[1] === 9) {
-		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[x][clickPosition][0] === 1) {
-		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[x][clickPosition][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -96,11 +92,9 @@ ballUp = () => {
 	let y = gameBall[1];
 	let clickPosition = x - 1;
 	if (gameBall[0] === 0) {
-		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[clickPosition][y][0] === 1) {
-		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[clickPosition][y][0] === 3) {
 		gameArray[x][y][1] = '';
@@ -123,11 +117,9 @@ ballDown = () => {
 	let y = gameBall[1];
 	let clickPosition = x + 1;
 	if (gameBall[0] === 5) {
-		alert('You can’t go there')
 		return false;
 	}
 	if (gameArray[clickPosition][y][0] === 1) {
-		alert('There is a block, think again')
 		return false;
 	} else if (gameArray[clickPosition][y][0] === 3) {
 		gameArray[x][y][1] = '';
