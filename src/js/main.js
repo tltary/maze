@@ -198,14 +198,14 @@ function generateRandomMaze() {
 	if (randomX >= 5) {
 		finishX = 5;
 	} else if (finishX === 0) {
-		finishX = 1;
+		finishX = 2;
 	} else {
 		finishX = randomX;
 	}
 	if (randomY >= 9) {
 		finishY = 9;
 	} else if (randomY === 0) {
-		finishY = 0;
+		finishY = 2;
 	} else {
 		finishY = randomY;
 	}
