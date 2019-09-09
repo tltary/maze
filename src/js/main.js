@@ -48,7 +48,7 @@ ballLeft = () => {
 		gameArray[x][clickPosition][1] = 'ball';
 		gameBall[1] = clickPosition;
 		ball.style.left = `${clickPosition * 100}px`;
-		init();
+		generateRandomMaze();
 		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
@@ -75,7 +75,7 @@ ballRight = () => {
 		gameArray[x][clickPosition][1] = 'ball';
 		gameBall[1] = clickPosition;
 		ball.style.left = `${clickPosition * 100}px`;
-		init();
+		generateRandomMaze();
 		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
@@ -102,7 +102,7 @@ ballUp = () => {
 		gameArray[x][clickPosition][1] = 'ball';
 		gameBall[1] = clickPosition;
 		ball.style.top = `${clickPosition * 100}px`;
-		init();
+		generateRandomMaze();
 		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
@@ -129,7 +129,7 @@ ballDown = () => {
 		gameArray[x][clickPosition][1] = 'ball';
 		gameBall[1] = clickPosition;
 		ball.style.top = `${clickPosition * 100}px`;
-		init();
+		generateRandomMaze();
 		alert('Congratulations you won!')
 	} else {
 		gameArray[x][y][1] = '';
@@ -166,10 +166,10 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	generateRandomMaze();
-	init();
 });
 
 function generateRandomMaze() {
+	gameArray = [];
 	let generateArray = [];
 	for (let i = 0;i < 6;i = i + 1) {
 		generateArray[i] = []
@@ -207,6 +207,6 @@ function generateRandomMaze() {
 	}
 	gameArray[finishX][finishY][0] = 3;
 	gameArray[finishX][finishY][1] = '';
-	
+	init();
 }
 
