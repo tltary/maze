@@ -31,6 +31,15 @@ body {
     }
 }
 
+.restart {
+	position: absolute;
+    color: #fff;
+    background-color: #000;
+    font-size: 24px;
+    left: 20px;
+    top: 60px;
+}
+
 .game {
 	&__container {
 		background-color: #fff;

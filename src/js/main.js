@@ -3,7 +3,12 @@ let gameArray = [];
 const app = document.querySelector('.app');
 const ball = document.querySelector('.js-ball');
 const turn = document.querySelector('.js-turn');
+const restart = document.querySelector('.js-restart');
 let gameBall = [0,0];
+
+restart.addEventListener('click', function() {
+	generateRandomMaze()
+}, true)
 
 turn.addEventListener('click', function() {
 	if (!this.classList.contains('active')) {

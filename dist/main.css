@@ -442,6 +442,14 @@ body {
     color: #000;
     box-shadow: 5px 5px 15px 0px white; }
 
+.restart {
+  position: absolute;
+  color: #fff;
+  background-color: #000;
+  font-size: 24px;
+  left: 20px;
+  top: 60px; }
+
 .game__container {
   background-color: #fff;
   width: 1000px;
