@@ -57,7 +57,7 @@ ballRight = () => {
 	let x = gameBall[0];
 	let y = gameBall[1];
 	let clickPosition = y + 1;
-	if (gameBall[1] === 5) {
+	if (gameBall[1] === 9) {
 		alert('You can’t go there')
 		return false;
 	}
