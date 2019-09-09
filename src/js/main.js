@@ -1,15 +1,21 @@
-let gameArray = [
-	[[2,'ball'],[0,''],[0,''],[0,''],[0,''],[0,''],[0,''],[0,''],[0,''],[0,'']],
-	[[1,''],[1,''],[0,''],[1,''],[1,''],[1,''],[1,''],[0,''],[1,''],[0,'']],
-	[[0,''],[0,''],[0,''],[0,''],[0,''],[0,''],[1,''],[0,''],[1,''],[0,'']],
-	[[1,''],[0,''],[1,''],[1,''],[1,''],[0,''],[1,''],[0,''],[0,''],[0,'']],
-	[[0,''],[0,''],[1,''],[0,''],[0,''],[0,''],[0,''],[1,''],[1,''],[1,'']],
-	[[1,''],[1,''],[1,''],[1,''],[1,''],[1,''],[0,''],[0,''],[0,''],[3,'']],
-];
+let gameArray = [];
 
 const app = document.querySelector('.app');
 const ball = document.querySelector('.js-ball');
+const turn = document.querySelector('.js-turn');
 let gameBall = [0,0];
+
+turn.addEventListener('click', function() {
+	if (!this.classList.contains('active')) {
+		app.classList.add('active');
+		ball.classList.add('active');
+		turn.classList.add('active');
+	} else {
+		app.classList.remove('active');
+		ball.classList.remove('active');
+		turn.classList.remove('active');
+	}
+}, true)
 
 window.addEventListener('keydown', function (event) {
 	if (event.key === 'ArrowUp') {
@@ -141,16 +147,16 @@ function init() {
 		for (let a = 0;a < cache.length;a = a + 1) {
 			cacheClass = ``;
 			cacheText = ``;
-			if (cache[a][0] === 1) {
+			if (cache[a][0] == 1) {
 				cacheClass = `block`;
 			}
-			if (cache[a][0] === 2) {
+			if (cache[a][0] == 2) {
 				cacheText = `start`;
 			}
-			if (cache[a][0] === 3) {
+			if (cache[a][0] == 3) {
 				cacheText = `finish`;
 			}
-			render += `<span class="item ${cacheClass}">${cacheText}</span>`
+			render += `<span class="item ${cacheClass}" data-pos="${a}" data-state="${cache[a][0]}">${cacheText}</span>`
 		}
 	}
 	app.innerHTML = null;
@@ -159,6 +165,44 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-	init()
+	generateRandomMaze();
+	init();
 });
+
+function generateRandomMaze() {
+	let generateArray = [];
+	for (let i = 0;i < 6;i = i + 1) {
+		generateArray[i] = []
+		for (let a = 0;a < 10;a = a + 1) {
+			generateArray[i][a] = [];
+			let randomInt = parseInt(Math.random() * 10);
+			if (randomInt <= 4) {
+				generateArray[i][a][0] = 0;
+			} else {
+				generateArray[i][a][0] = 1;
+			}
+			generateArray[i][a][1] = '';
+		}
+	}
+	gameArray = generateArray;
+	gameArray[0][0][0] = 2;
+	gameArray[0][0][1] = 'ball';
+	let randomX = parseInt(Math.random() * 10);
+	let randomY = parseInt(Math.random() * 10);
+	let finishX = 0;
+	let finishY = 0;
+	if (randomX >= 5) {
+		finishX = 5;
+	} else {
+		finishX = randomX;
+	}
+	if (randomY >= 9) {
+		finishY = 9;
+	} else {
+		finishY = randomY;
+	}
+	gameArray[finishX][finishY][0] = 3;
+	gameArray[finishX][finishY][1] = '';
+	
+}
 

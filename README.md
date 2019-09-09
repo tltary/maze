@@ -1,4 +1,4 @@
-# maze game(only desktop)
+# Random 🤩 generate maze game(only desktop)
 
 ### Try to create mase game only js and css
 ### Control on keyboard arrow

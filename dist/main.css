@@ -428,6 +428,20 @@ body {
   .github img {
     width: 100%; }
 
+.turn {
+  position: absolute;
+  color: #fff;
+  background-color: #000;
+  font-size: 24px;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out, color .3s ease-in-out; }
+  .turn.active {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 5px 5px 15px 0px white; }
+
 .game__container {
   background-color: #fff;
   width: 1000px;
@@ -437,7 +451,10 @@ body {
   .game__container .app {
     display: flex;
     flex-wrap: wrap;
-    background: #000; }
+    background: #000;
+    transition: background .3s ease-in-out; }
+    .game__container .app.active {
+      background: #fff; }
   .game__container .item {
     flex: 0 0 10%;
     max-width: 10%;
@@ -458,6 +475,8 @@ body {
   left: 0;
   top: 0;
   transition: left .3s ease-in-out, top .3s ease-in-out; }
+  .game .ball.active:after {
+    opacity: 0; }
   .game .ball:before {
     content: '';
     position: absolute;
@@ -476,5 +495,7 @@ body {
     border-radius: 50%;
     left: calc(50% - (300px / 2));
     top: calc(50% - (300px / 2));
-    background: radial-gradient(circle, white 40%, rgba(0, 0, 0, 0.8) 70%); }
+    background: radial-gradient(circle, white 40%, rgba(0, 0, 0, 0.8) 70%);
+    transition: opacity .3s ease-in-out;
+    opacity: 1; }
 
