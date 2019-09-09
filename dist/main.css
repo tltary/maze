@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=VT323&display=swap);
 /*! de-style.css v1.0.5 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model
    ========================================================================== */
@@ -417,7 +418,8 @@ template {
   display: none; }
 
 body {
-  background-color: #000; }
+  background-color: #000;
+  font-family: 'VT323', monospace; }
 
 .github {
   display: inline-block;
