@@ -207,6 +207,9 @@ function generateRandomMaze() {
 	}
 	gameArray[finishX][finishY][0] = 3;
 	gameArray[finishX][finishY][1] = '';
+	gameBall = [0,0];
+	ball.style.left = `0px`;
+	ball.style.top = `0px`;
 	init();
 }
 
