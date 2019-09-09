@@ -147,13 +147,13 @@ function init() {
 		for (let a = 0;a < cache.length;a = a + 1) {
 			cacheClass = ``;
 			cacheText = ``;
-			if (cache[a][0] == 1) {
+			if (cache[a][0] === 1) {
 				cacheClass = `block`;
 			}
-			if (cache[a][0] == 2) {
+			if (cache[a][0] === 2) {
 				cacheText = `start`;
 			}
-			if (cache[a][0] == 3) {
+			if (cache[a][0] === 3) {
 				cacheText = `finish`;
 			}
 			render += `<span class="item ${cacheClass}" data-pos="${a}" data-state="${cache[a][0]}">${cacheText}</span>`
@@ -193,11 +193,15 @@ function generateRandomMaze() {
 	let finishY = 0;
 	if (randomX >= 5) {
 		finishX = 5;
+	} else if (finishX === 0) {
+		finishX = 1;
 	} else {
 		finishX = randomX;
 	}
 	if (randomY >= 9) {
 		finishY = 9;
+	} else if (randomY === 0) {
+		finishY = 1;
 	} else {
 		finishY = randomY;
 	}
