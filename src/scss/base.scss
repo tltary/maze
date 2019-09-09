@@ -48,6 +48,7 @@ body {
 	    height: 100px;
 	    left: 0;
 		top: 0;
+		transition: left .3s ease-in-out, top .3s ease-in-out;
 		&:before {
 			content: '';
 			position: absolute;
