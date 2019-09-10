@@ -184,10 +184,18 @@ function generateRandomMaze() {
 	gameArray = generateArray;
 	gameArray[0][0][0] = 2;
 	gameArray[0][0][1] = 'ball';
-	gameArray[0][1][0] = 0;
-	gameArray[0][1][1] = '';
-	gameArray[1][0][0] = 0;
-	gameArray[1][0][1] = '';
+	for (let i = 0;i < 1;i = i + 1) {
+		for (let a = 0;a < 10;a = a + 1) {
+			gameArray[i][a][0] = 0;
+			gameArray[i][a][1] = '';
+		}
+	}
+	for (let i = 0;i < 1;i = i + 1) {
+		for (let a = 0;a < 6;a = a + 1) {
+			gameArray[a][i][0] = 0;
+			gameArray[a][i][1] = '';
+		}
+	}
 	let randomX = parseInt(Math.random() * 10);
 	let randomY = parseInt(Math.random() * 10);
 	let finishX = 0;
@@ -202,16 +210,17 @@ function generateRandomMaze() {
 	if (randomY >= 9) {
 		finishY = 9;
 	} else if (randomY === 0) {
-		finishY = 2;
+		finishY = 4;
 	} else {
 		finishY = randomY;
 	}
 	gameArray[finishX][finishY][0] = 3;
 	gameArray[finishX][finishY][1] = '';
-	gameArray[finishX - 1][finishY][0] = 0;
-	gameArray[finishX - 1][finishY][1] = '';
-	gameArray[finishX][finishY - 1][0] = 0;
-	gameArray[finishX][finishY - 1][1] = '';
+	console.log(finishX)
+	for (let i = finishX - 1;i > 0;i = i - 1) {
+		gameArray[i][finishY][0] = 0;
+		gameArray[i][finishY][1] = '';
+	}
 	gameBall = [0,0];
 	ball.style.left = `0px`;
 	ball.style.top = `0px`;
